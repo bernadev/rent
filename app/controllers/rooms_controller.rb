@@ -4,6 +4,7 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
+    @datatable = Effective::Datatables::Rooms.new
     @rooms = Room.all
   end
 
