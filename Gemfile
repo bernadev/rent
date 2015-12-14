@@ -6,6 +6,8 @@ gem 'rails', '4.2.4'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'haml'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -24,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'effective_datatables', '>= 2.1.16'
 gem 'mysql2', '~> 0.3.13'
+gem 'pg'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -36,6 +39,12 @@ gem 'mysql2', '~> 0.3.13'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rubocop'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'guard'
+  gem 'guard-livereload', '~> 2.4', require: false
+  gem "rack-livereload"
 end
 
 group :development do

@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %strong Word:
+  = @keyword.word
+= link_to 'Edit', edit_keyword_path(@keyword)
+|
+= link_to 'Back', keywords_path

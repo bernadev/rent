@@ -11,26 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105144719) do
+ActiveRecord::Schema.define(version: 20151105145341) do
+
+  create_table "configs", force: :cascade do |t|
+    t.string   "key",        limit: 255
+    t.string   "value",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "keywords", force: :cascade do |t|
-    t.string   "word"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "word",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.string   "url"
-    t.float    "time"
-    t.float    "price"
-    t.string   "status"
-    t.string   "requirements"
-    t.string   "description"
+    t.string   "url",          limit: 255
+    t.float    "time",         limit: 24
+    t.float    "price",        limit: 24
+    t.string   "status",       limit: 255
+    t.string   "requirements", limit: 255
+    t.string   "description",  limit: 255
     t.boolean  "discarded"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
-  add_index "rooms", ["url"], name: "index_rooms_on_url", unique: true
+  add_index "rooms", ["url"], name: "index_rooms_on_url", unique: true, using: :btree
 
 end

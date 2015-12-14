@@ -1,0 +1,25 @@
+%p#notice= notice
+%p
+  %strong Url:
+  = @room.url
+%p
+  %strong Time:
+  = @room.time
+%p
+  %strong Price:
+  = @room.price
+%p
+  %strong Status:
+  = @room.status
+%p
+  %strong Requirements:
+  = @room.requirements
+%p
+  %strong Description:
+  = @room.description
+%p
+  %strong Discarded:
+  = @room.discarded
+= link_to 'Edit', edit_room_path(@room)
+|
+= link_to 'Back', rooms_path

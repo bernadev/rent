@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require effective_datatables
 //= require_tree .
+//= require bootstrap-sprockets

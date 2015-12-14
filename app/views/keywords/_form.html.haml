@@ -1,0 +1,15 @@
+= form_for(@keyword) do |f|
+  - if @keyword.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@keyword.errors.count, "error")
+        prohibited this keyword from being saved:
+      %ul
+        - @keyword.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :word
+    %br/
+    = f.text_field :word
+  .actions
+    = f.submit
