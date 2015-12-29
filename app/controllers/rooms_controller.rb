@@ -55,7 +55,6 @@ class RoomsController < ApplicationController
         roomi.requirements = I18n.transliterate(@room_html.xpath("/html/body/div[3]/div/div[1]/section/div[3]/p")[0].text[0,255])
         roomi.description = I18n.transliterate(@room_html.xpath("/html/body/div[3]/div/div[1]/section/div[4]/p")[0].text[0,255])
         roomi.time = JSON.parse(result)["rows"][0]["elements"][0]["duration"]["value"].to_f/60
-        binding.pry if roomi.time == 0
         roomi.save!
       end
     end

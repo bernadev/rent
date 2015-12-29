@@ -1,15 +1,14 @@
 %p#notice= notice
 %nav.navbar.navbar-fixed-top.navbar-inverse
-  .container
+  .container-fluid
     .navbar-header
       %a.navbar-brand{:href => "#"} Listing Rooms
     #navbar.collapse.navbar-collapse
-.container
+      %ul.nav.navbar-nav
+        %li= link_to 'Fetch', controller: 'rooms', action: 'fetch'
+        %li= link_to 'New Room', new_room_path
+        %li= link_to 'Settings', configs_path
+.container.top-margin-container
   .starter-template
-    %h3= link_to 'Fetch', controller: 'rooms', action: 'fetch'
+    %br
     = render_datatable(@datatable)
-    %br/
-    %ul.nav.nav-pills
-      %li= link_to 'Fetch', controller: 'rooms', action: 'fetch'
-      %li= link_to 'New Room', new_room_path
-      %li= link_to 'config', configs_path

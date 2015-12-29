@@ -17,3 +17,5 @@
 /tmp
 private.rb
 myCookie
+
+config/database.yml

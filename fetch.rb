@@ -41,7 +41,6 @@ urls.each do |url|
   request = "curl 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{WORK_COORDINATES.join(",")}&destinations=#{room_coordinates.join(",")}&mode=walking&transit_routing_preference=less_walking&key=#{API_KEY}'"
   result = `#{request}`
   unless (JSON.parse(result)["rows"][0]["elements"][0]["duration"]["value"] rescue nil).nil?
-    binding.pry
     @room_html = Nokogiri::HTML(realRoom)
     status = @room_html.xpath("/html/body/div[3]/"+
                               "div/div[1]/section/div[2]/p")[0].text
